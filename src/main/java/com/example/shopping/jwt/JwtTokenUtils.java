@@ -28,6 +28,8 @@ public class JwtTokenUtils {
 
     // JWT 발급 메소드
     public String generateToken(UserDetails userDetails) {
+
+        Instant now = Instant.now();
         Claims jwtClaims = Jwts.claims()
                 // 사용자
                 .setSubject(userDetails.getUsername())

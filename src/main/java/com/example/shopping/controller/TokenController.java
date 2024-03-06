@@ -22,8 +22,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 public class TokenController {
     private final JwtTokenUtils jwtTokenUtils;
-    private final UserDetailsManager userDetailsManager; // 사용자 정보 확인 Bean
-    private final PasswordEncoder passwordEncoder; // 사용자가 JWT 발급을 위해 제출한 비번 확인 암호화 Bean
+    private final UserDetailsManager userDetailsManager;
+    private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/issue")
     public JwtResponseDto issueJwt(

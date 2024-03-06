@@ -26,21 +26,18 @@ public class JwtTokenUtils {
                = Keys.hmacShaKeyFor(jwtSecret.getBytes());
     }
 
-    // JWT 발급 메소드
+
     public String generateToken(UserDetails userDetails) {
 
         Instant now = Instant.now();
         Claims jwtClaims = Jwts.claims()
-                // 사용자
                 .setSubject(userDetails.getUsername())
-                // 발급일자
                 .setIssuedAt(Date.from(Instant.now()))
-                // 만료일자 (24시간)
                 .setExpiration(Date.from(Instant.now().plusSeconds(60 * 60 * 24)));
 
         return Jwts.builder()
                 .setClaims(jwtClaims)
                 .signWith(signingKey)
-                .compact(); // 문자열로 반환
+                .compact();
     }
 }

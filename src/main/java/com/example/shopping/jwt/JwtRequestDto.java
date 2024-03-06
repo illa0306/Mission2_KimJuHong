@@ -5,7 +5,7 @@ package com.example.shopping.jwt;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
+
 
 @Getter
 @AllArgsConstructor

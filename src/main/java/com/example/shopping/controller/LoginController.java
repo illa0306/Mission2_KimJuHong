@@ -33,7 +33,7 @@ public class LoginController {
 
     @GetMapping("/profile")
     public String profile(
-            Authentication authentication, // 현재 상요자와 연관되어 있는 인증 정보 확인
+            Authentication authentication,
             Model model
     ) {
         log.info(authentication.getName());

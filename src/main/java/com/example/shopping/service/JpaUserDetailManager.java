@@ -1,6 +1,5 @@
 package com.example.shopping.service;
 
-import com.example.shopping.entity.UserEntity;
 import com.example.shopping.repo.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.User;
@@ -29,7 +28,7 @@ public class JpaUserDetailManager implements UserDetailsManager {
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-        Optional<User> optionalUser // UserEntity
+        Optional<User> optionalUser
                 = userRepository.findByUsername(username);
         if (optionalUser.isEmpty())
             throw new UsernameNotFoundException(username);
